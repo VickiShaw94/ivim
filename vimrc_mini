@@ -42,7 +42,8 @@ set undofile " Set undo
 
 " Set directories
 function! InitializeDirectories()
-    let parent=$HOME
+    let parent=fnameescape($HOME)
+    :echom parent
     if has('nvim')
         let prefix='.local/share/nvim'
         let dir_list={'cache': ''}
